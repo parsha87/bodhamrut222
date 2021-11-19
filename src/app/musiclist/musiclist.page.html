@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="mytitle">भजन</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <div>
+    <ion-searchbar placeholder="भजन शोधा..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+    <div text-center>
+      <ion-label text-center>{{typeLabel}}</ion-label>
+    </div>
+    <ion-grid>
+
+      <ion-row class="ion-justify-content-start" no-padding align-items-start>
+        <ion-col ion-item no-lines no-padding text-center>
+          <div Class="fancybutton" (click)="showGrid(1)">
+            <img src="assets/img/bhajan.webp" scroll="false" width="40%">
+            <br />
+
+            <ion-label>मराठी भजन</ion-label>
+          </div>
+          <!-- <ion-button size="small" color="primary" (click)="showGrid(5)">Surgery</ion-button> -->
+        </ion-col>
+        <ion-col ion-item no-lines no-padding text-center>
+          <div Class="fancybutton" (click)="showGrid(2)">
+            <img src="assets/img/bhajan.webp" scroll="false" width="40%">
+            <br />
+            <ion-label>
+              हिंदी भजन</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card>
+      <ion-list style="background: orange">
+        <ion-item *ngFor="let item of flteredBhajans | filter:filterTerm" (click)="openPlayer(item)">
+
+          <div item-content style="display: flex; justify-content: space-between; width: 100%;"
+            (click)="$event.stopPropagation()">
+            <div style="flex-grow: 1; text-align: left"><b>{{item.index}}. &nbsp;{{item.displayName}}</b></div>
+            <ion-icon color="info" style="flex-grow: 0" name="musical-notes"
+              (click)="openModal(item.lyrics, item.displayName)"></ion-icon>
+
+            <ion-icon *ngIf="item.filepath!=''" color="warning" style="flex-grow: 0" style="margin-left: 20px;"
+              name="play" (click)="openPlayer(item)"></ion-icon>
+
+            <!-- <ion-icon color="warning" style="flex-grow: 0" style="margin-left: 20px;" name="play"
+              (click)="openPlayernew(item)"></ion-icon>  -->
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+  </div>
+
+
+</ion-content>

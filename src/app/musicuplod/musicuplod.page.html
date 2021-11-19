@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="musicuplod"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="mytitle">भजन अपलोड
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div *ngIf="!isUploading && !isUploaded">
+    <ion-label class="ion-justify-content-center" style="text-align: center;"> 
+      अपलोड करण्यासाठी भजन निवडा</ion-label>
+    <div *ngIf="!isUploading && !isUploaded">
+
+      <ion-grid class="ion-justify-content-start ion-no-padding" align-items-start>
+
+        <ion-row>
+
+          <ion-col>
+            <ion-label position="floating">
+              Bhajan Index
+            </ion-label>
+            <ion-input id="index" [(ngModel)]="mydataInfo.index" name="index" #index="ngModel">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+
+          <ion-col>
+            <ion-label position="floating">
+              Bhajan Language Type
+            </ion-label>
+            <ion-select [(ngModel)]="mydataInfo.bhajanLangType" name="bhajanLangType" placeholder="Tap to select.."
+              [selectedText]="mydataInfo.bhajanLangType ? mydataInfo.bhajanLangType.toString() : mydataInfo.bhajanLangType"
+              required>
+              <ion-select-option value="Aarti">
+                Aarti
+              </ion-select-option>
+              <ion-select-option value="Marathi">
+                Marathi
+              </ion-select-option>
+              <ion-select-option value="Hindi">
+                Hindi
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label position="floating">
+              Bhajan Type
+            </ion-label>
+            <ion-select [(ngModel)]="mydataInfo.bhajanType" name="bhajanType" placeholder="Tap to select.."
+              [selectedText]="mydataInfo.bhajanType ? mydataInfo.bhajanType.toString() : mydataInfo.bhajanType"
+              required>
+              <ion-select-option value="Baba Bhajan">
+                Baba Bhajan
+              </ion-select-option>
+              <ion-select-option value="Bhakt Bhajan">
+                Bhakt Bhajan
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label position="floating">
+              Display Name
+            </ion-label>
+            <ion-input id="displayName" [(ngModel)]="mydataInfo.displayName" name="displayName" #displayName="ngModel">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label position="floating">
+              Alternate Name (Marathi/Hindi)
+            </ion-label>
+            <ion-input id="alternateName" [(ngModel)]="mydataInfo.alternateName" name="alternateName"
+              #alternateName="ngModel">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label position="floating">
+              Lyrics
+            </ion-label>
+            <ion-textarea type="text" rows="5"  cols="20" id="start" [(ngModel)]="mydataInfo.lyrics" name="lyrics"
+              #lyrics="ngModel">
+            </ion-textarea>
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row>
+          <ion-col>
+            <ion-label position="stacked">
+              Select Audio File
+            </ion-label>
+            <ion-button color="warning" shape="round">
+              <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)" />
+            </ion-button>
+          </ion-col>
+        </ion-row> -->
+        <ion-row>
+          <ion-col>
+            <ion-button color="success" shape="round" (click)="uploadSongWithOutFile()" *ngIf="!this.isEdit">Save</ion-button>
+            <!-- <ion-button color="success" shape="round" (click)="uploadSong()" *ngIf="!this.isEdit">Save</ion-button> -->
+            <ion-button color="success" shape="round" (click)="updatetoDB()" *ngIf="this.isEdit">Update</ion-button>
+
+            <ion-button color="danger" shape="round" (click)="back()">Back</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <ion-card class="ion-text-center" *ngIf="isUploading && !isUploaded">
+    <ion-card-header>
+      <ion-card-title>Selected File:<b>{{ fileName }}</b></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="percentage | async as pct">
+        Progress: {{ pct | number }}%
+        <ion-progress-bar value="{{ pct / 100 }}"></ion-progress-bar>
+      </div>
+      <div *ngIf="snapshot | async as snap">
+        File Size: {{ snap.totalBytes | fileSizePipe }} Transfered:
+        {{ snap.bytesTransferred | fileSizePipe }}
+        <div *ngIf="snapshot && snap.bytesTransferred != snap.totalBytes">
+          <ion-button color="warning" size="small" (click)="task.pause()" class="button is-warning">Pause</ion-button>
+          <ion-button size="small" (click)="task.resume()" class="button is-info">Resume</ion-button>
+          <ion-button color="danger" size="small" (click)="task.cancel()" class="button is-danger">Cancel</ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-text-center" *ngIf="!isUploading && isUploaded">
+    <ion-card-header>
+      <ion-card-title>
+        <b>{{ fileName }}</b> Uploaded!
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="UploadedFileURL | async as url">
+        <img [src]="url" />
+        <a [href]="url" target="_blank" rel="noopener">Download</a>
+      </div>
+      File Size: {{ fileSize | fileSizePipe }}
+      <ion-button expand="full" color="success" (click)="isUploading = isUploaded = false">Upload More</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <h2 class="ion-text-center">Uploaded Bhajans</h2>
+
+  <ion-card color="light" class="ion-text-center" *ngFor="let item of images | async">
+    <ion-card-header>
+      <ion-card-title>
+        {{ item.name }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img [src]="item.filepath" />
+      <a [href]="item.filepath" target="_blank" rel="noopener">Download</a>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>

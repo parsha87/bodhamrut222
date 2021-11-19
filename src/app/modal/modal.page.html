@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Lyrics</ion-title>
+    <ion-buttons fill="outline" slot="end">
+      <ion-button (click)="dismiss()">
+        Cancel
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="main-view ">
+  <div class="overlay" (click)="dismiss()"></div>
+  <div class="modal_content bgImage">
+    <div class="circle"><img src="assets/img/harmo.png" class="imgstyle"></div>
+    <div class="modal-content" style="padding: 38px;">
+      <h2 text-center>{{name}}</h2>
+      <p>
+        {{lyrics}}
+      </p>
+    </div>
+  </div>
+
+</ion-content>

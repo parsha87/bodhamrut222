@@ -1,0 +1,39 @@
+// div {
+//     // height: calc(100vh - 56px);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+ion-content {
+  // --background: #ffb74d !important; // you don't need to use a css custom property, but you can of course
+   background-image: url('../../assets/img/t4.jpg')!important;
+   background-size: cover;
+   background-repeat: no-repeat;
+   --background: round;
+   }
+ 
+   .bg{
+     background-image: url('../../assets/img/t4.jpg')!important;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background: round;
+   } 
+.cell-class {
+    border-color: black; 
+    border-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+    background-color: lightgrey
+  }
+
+  .bgcolor {
+    background: #cdcfd6;
+  }
+  
+  .myborder {
+    border: 1px solid #f57c00;
+  }
+  
+  .myborderleft {
+    border-left: 1px solid #f57c00;
+  }

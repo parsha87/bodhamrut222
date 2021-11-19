@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="mytitle">बाबांचे फोटो</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg">
+  <div style="height: 100%;">
+    <ion-grid style="padding: 6px;">
+      <!-- <ion-row>
+        <ion-col>
+          <h4 text-center class="headerstyle">भजन</h4>
+        </ion-col>
+      </ion-row> -->
+      <ion-row>
+        <ion-col size="12" *ngFor="let ph of photo">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="भजन" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row>
+        <ion-col>
+          <h4 text-center class="headerstyle">भ्रमण</h4>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="भ्रमण" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4 text-center class="headerstyle">भंडारा</h4>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="भंडारा" text=""></ion-img>
+        </ion-col>
+      </ion-row> -->
+    </ion-grid>
+
+  </div>
+
+
+  <!--   
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="photoService.takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+  </ion-fab> -->
+</ion-content>

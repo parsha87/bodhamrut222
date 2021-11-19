@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Music List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="solid" size="default" color="primary" (click)="addBhajans()" end  class="ion-float-right">Add</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-buttons end> -->
+  <!-- <ion-button fill="outline" size="default" color="dark" (click)="onClearPad()">Clear</ion-button>
+      <ion-button fill="solid" size="default" color="danger" (click)="onCancel()">Cancel</ion-button> -->
+  <!-- </ion-buttons> -->
+  <ion-card>
+    <ion-list style="background: rgb(236, 211, 99)">
+      <ion-item *ngFor="let item of  bhajans"> <!-- (click)="openBhajan(item)" -->
+
+        <div item-content style="display: flex; justify-content: space-between; width: 100%;"
+          (click)="$event.stopPropagation()">
+          <div style="flex-grow: 1; text-align: left"><b>{{item.index}}.{{item.name}}</b></div>
+
+
+          <a [href]="item.filepath" target="_blank" rel="noopener" name="cloud-download">
+            <ion-icon color="primary" style="flex-grow: 0" style="margin-left: 20px;" name="cloud-download"></ion-icon>
+          </a>
+          <ion-icon color="primary" style="flex-grow: 0" name="create" style="margin-left: 20px;"
+            (click)="EditMusic(item)">
+          </ion-icon>
+
+          <ion-icon color="danger" style="flex-grow: 0" style="margin-left: 20px;" name="trash"
+            (click)="deleteMusic(item)"></ion-icon>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

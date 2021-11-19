@@ -1,0 +1,18 @@
+// .background-image{
+//     // --background: url(../assets/img/templeborder.jpg) 0 0/100% 100% no-repeat;
+//     background: url("../assets/img/templeborder.jpg") no-repeat center center fixed; 
+//         -webkit-background-size: cover;
+//         -moz-background-size: cover;
+//         background-size: cover;
+// }
+
+
+
+.item-native{
+    --background: yellow !important;
+
+}
+
+ion-item{
+    background: yellow !important;
+  }

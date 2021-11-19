@@ -1,0 +1,62 @@
+.bg{
+    background-image: url('../../assets/img/t4.jpg')!important;
+    background-size:cover;
+  }
+
+  .myborder {
+    border: 2px solid #ff9800;
+    border-radius: 15px;
+    border-style: solid;
+    margin: 3px;
+    height: 61px;
+  }
+
+  ion-content {
+    // --background: #ffb74d !important; // you don't need to use a css custom property, but you can of course
+     background-image: url('../../assets/img/t4.jpg')!important;
+     background-size: cover;
+    //  background-repeat: no-repeat;
+     --background: round;
+     }
+
+     .my-class{
+       background-color: palegoldenrod;
+
+     }
+
+     .btn {
+      // flex: 1 1 auto;
+      // margin: 10px;
+      // padding: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;
+     /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+      box-shadow: 0 0 20px #eee;
+      border-radius: 10px;
+     }
+    
+    /* Demo Stuff End -> */
+    
+    /* <- Magic Stuff Start */
+    
+    .btn:hover {
+      background-position: right center; /* change the direction of the change here */
+    }
+    
+    .btn-1 {
+      background-image: linear-gradient(to right,  #fffde7 21%, #ffeb3b 51%, #fff8e1  100%);
+    }
+
+    .my-header{
+      color: firebrick;
+      font-weight: 700;
+      background-color: #fff9c4;
+      padding: 20px;
+      border-radius: 21px;
+      border-style: solid;
+      border-width: 1px;
+      background: url('../../assets/img/t4.jpg');
+    }

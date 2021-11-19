@@ -1,0 +1,61 @@
+#scroll-list{
+    height: 100%;
+
+}
+.bhajandiv{
+    padding-left: 40px;
+    padding-right: 40px;
+    color: maroon;
+  }
+
+.homescreen-content {
+    height: 100%;
+    display: flex;
+    background-image: url('../../assets/img/t4.jpg')!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: round;
+  }
+.split {
+
+    position: fixed;
+    z-index: 1;
+    top: 57;
+    overflow-x: hidden;
+    padding-top: 15px;
+    
+}
+
+.test1 {
+    left: 0;
+    height: 70%;
+    width: 100%;
+    // background-color: wheat;
+    border-bottom: 1px solid floralwhite;
+}
+
+.test2 {
+    
+    left:0;
+    top: 55%;
+    height: 30%;
+    width: 100%;
+    background-color: wheat;
+}
+
+// .centered {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     text-align: center;
+// }
+
+.bg{
+    background-image: url('../../assets/img/t4.jpg')!important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background: round;
+  } 
+
+  p { white-space: pre-line; } 

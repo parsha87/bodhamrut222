@@ -1,0 +1,14 @@
+.bg{
+    background-image: url('../../assets/img/t4.jpg')!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: round;
+  } 
+  
+  ion-content {
+    // --background: #ffb74d !important; // you don't need to use a css custom property, but you can of course
+     background-image: url('../../assets/img/t4.jpg')!important;
+     background-size: cover;
+     background-repeat: no-repeat;
+     --background: round;
+     }

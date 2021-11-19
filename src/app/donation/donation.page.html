@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="mytitle">प्रकाशने</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg">
+  <div style="height: 100%;">
+    <ion-grid style="padding: 6px;">
+      <!-- <ion-row>
+        <ion-col>
+          <h4 text-center class="headerstyle">भजन</h4>
+        </ion-col>
+      </ion-row> -->
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="संत भक्तराज महाराज जीवन दर्शन" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h5 text-center class="headerstyle">प.पू.श्री भक्तराज महाराजांच्या कार्याचा थोडक्यात परिचय करून देणे अशक्य
+            आहे.....
+            <span style="color: blue; font-weight: bold;" (click)="OpenModal(1)">
+              पुढे वाचा..</span>
+            </h5>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo2">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="अष्टोत्तर नामावली  प. पू  भक्तराज महाराज" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h5 text-center class="headerstyle">सगुणात राहूनही निर्गुणाची सतत अनुभूति देणारे, सर्वज्ञानी, पूर्णत्वाला पोहचलेले संत म्हणजे प.पू. श्री भक्तराज महाराज, पू. बाबा शिष्यांकडून साधना म्हणजे नामस्मरण करून घेत असत....
+            <span style="color: blue; font-weight: bold;" (click)="OpenModal(2)">
+              पुढे वाचा..</span>
+          </h5>
+      
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo3">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="अष्टोत्तर नामावली प.पू. भक्तराज महाराज" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h5 text-center class="headerstyle">सदर अष्टोत्तर नामावली प.पू. भक्तराज महाराज (बाबा) यांच्या आशिर्वादाने श्री क्षेत्र त्र्यंबकेश्वर येथील भागवतकार श्री. चंद्रशेखर विष्णू शुक्ल (बाबांचे जुने पेटीवादक) यांनी केली आहे. साई दरबार, श्री क्षेत्र त्र्यंबकेश्वर, जि. नाशिक ।। हरि ॐ तत्सत् ।।
+            <span style="color: blue; font-weight: bold;" (click)="OpenModal(1)">
+              पुढे वाचा..</span>
+            </h5>
+        </ion-col>
+      </ion-row> -->
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo4">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="अमृत वाणी" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h5 text-center class="headerstyle">धन संपदा प्राप्त करने की अपेक्षा उसे उचित खर्च करना जैसे कठिन है ; उसी प्रकार विपुल ज्ञान प्राप्त कर ज्ञानी बनने या कहलाए जाने की अपेक्षा प्राप्त ज्ञान बहुजन समाज को कैसे अवगत करना भी कठिनसा है। ....
+            <span style="color: blue; font-weight: bold;" (click)="OpenModal(4)">
+              पुढे वाचा..</span>
+            </h5>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo5">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="नित्य उपासना व पंचपदी" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h5 text-center class="headerstyle">प.पू.सद्गुरू बाबांनी आपल्या संत भक्तराज विरचीत भजनामृत या ग्रंथाच्या आरंभी आपले हृदगत् मांडले आहे....
+            <span style="color: blue; font-weight: bold;" (click)="OpenModal(5)">
+              पुढे वाचा..</span>
+          </h5>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo6">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="प.पू. भक्तराज महाराज" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <!-- <h4 text-center class="headerstyle">भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा
+            भंडारा भंडारा</h4> -->
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo7">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="प.पू. भक्तराज महाराज" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <!-- <h4 text-center class="headerstyle">भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा भंडारा
+            भंडारा भंडारा</h4> -->
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" *ngFor="let ph of photo8">
+          <ion-img ionImgViewer scheme="light" [src]="ph" title="प.पू. भक्तराज महाराज" text=""></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+.myclass{
+    position: absolute;
+    top: 13%;
+    left: 0;
+    right: 0;
+    margin-top: -9px;
+
+}
+ion-content {
+    --background: #FFC000 !important; // you don't need to use a css custom property, but you can of course
+    // background-image: url('../../assets/img/t4.jpg')!important;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // --background: round;
+    }
+.icon {
+    margin-top: 20%;
+    font-size: 120px;
+    color: #fff;
+}
+
+.footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none !important;
+}
